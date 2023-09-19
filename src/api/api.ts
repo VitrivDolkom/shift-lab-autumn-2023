@@ -46,7 +46,7 @@ export const postSearch = (dto: TableSearchDto): Promise<DistrosTableRow> => {
 
   if (rowIndex === -1) errorMessage = 'Header not valid'
 
-  for (let i = 0; i < distrosTable.rows.length; i++) {
+  for (let i = 1; i < distrosTable.rows.length; i++) {
     const row = distrosTable.rows[i]
 
     if (row[rowIndex].toLowerCase().indexOf(dto.search.toLowerCase()) > -1) {

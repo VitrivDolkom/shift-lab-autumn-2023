@@ -2,4 +2,13 @@ body {
   --success-hover: #568F55;
   --success-bg: #F1FAF0;
   --success-primary: #198754;
+
+
+  --info-hover: #2B6DD1;
+  --info-bg: #E7EDF6;
+  --info-primary: #0150C8;
+
+  --danger-hover: #E1676C;
+  --danger-bg: #FEEDEE;
+  --danger-primary: #DC3545;
 }

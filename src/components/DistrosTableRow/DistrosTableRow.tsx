@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind'
-
 import s from './style.module.css'
 
 const cx = classNames.bind(s)

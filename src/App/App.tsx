@@ -1,13 +1,13 @@
 import { postSearch } from '@/api'
-import { DistrosSearch, SearchForm } from '@/components/DistrosSearch/DistrosSearch'
-import { DistrosTable } from '@/components/DistrosTable'
+import { DistrosTable } from '@/components'
+import { DistrosSearch } from '@/components/DistrosSearch/DistrosSearch'
 import { useTableState } from './hooks/useTableState'
 import './styles/style.css'
 
 const App = () => {
   const { distrosTable, searchInfo, searchedCells, updateSearchInfo, setSearchedCells } = useTableState()
 
-  const onSearchSubmit = (newSearch: SearchForm) => {
+  const onSearchSubmit = (newSearch: TableSearchDto) => {
     postSearch(newSearch).then((cells) => {
       setSearchedCells(cells)
       updateSearchInfo(cells.length)
