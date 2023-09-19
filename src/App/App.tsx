@@ -1,9 +1,8 @@
-import { postSearch } from '../api'
-import { DistrosTable } from '../components/DistrosTable'
-import { SearchField, SearchForm } from '../components/SearchField/SearchField'
-import { useTableState } from './useTableState'
-
-import './style.css'
+import { postSearch } from '@/api'
+import { DistrosSearch, SearchForm } from '@/components/DistrosSearch/DistrosSearch'
+import { DistrosTable } from '@/components/DistrosTable'
+import { useTableState } from './hooks/useTableState'
+import './styles/style.css'
 
 const App = () => {
   const { distrosTable, searchInfo, searchedCells, updateSearchInfo, setSearchedCells } = useTableState()
@@ -20,7 +19,11 @@ const App = () => {
   return (
     <div className="app">
       <div className="box">
-        <SearchField searchInfo={searchInfo} onSubmit={onSearchSubmit} headers={distrosTable.rows[0]} />
+        <DistrosSearch
+          searchInfo={searchInfo}
+          onSubmit={onSearchSubmit}
+          headers={distrosTable.rows[0]}
+        />
         <DistrosTable table={distrosTable} searchedCells={searchedCells} />
       </div>
     </div>

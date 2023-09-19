@@ -1,5 +1,4 @@
 import { DistrosTableRow } from './DistrosTableRow'
-
 import s from './style.module.css'
 
 interface DistrosTableProps {

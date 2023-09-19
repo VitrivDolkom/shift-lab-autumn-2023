@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { fetchDistros } from '../api'
+import { fetchDistros } from '../../api'
 
 export const useTableState = () => {
   const [distrosTable, setDistrosTable] = React.useState<DistrosTable | null>(null)

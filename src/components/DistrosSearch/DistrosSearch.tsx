@@ -8,7 +8,7 @@ interface SearchFieldProps {
 
 export type SearchForm = TableSearchDto
 
-export const SearchField = ({ onSubmit, headers, searchInfo }: SearchFieldProps) => {
+export const DistrosSearch = ({ onSubmit, headers, searchInfo }: SearchFieldProps) => {
   const { register, handleSubmit } = useForm<SearchForm>()
   const onSearchSubmit: SubmitHandler<SearchForm> = (values) => {
     onSubmit(values)

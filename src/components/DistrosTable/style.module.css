@@ -22,11 +22,14 @@
   text-overflow: ellipsis;
   padding: 10px 7px;
   border: 1px solid black;
+  color: var(--info-primary);
+  background-color: var(--info-bg);
 
 }
 
 .cellHeader {
-  color: green;
+  color: var(--success-primary);
+  background-color: var(--success-bg);
   position: absolute;
   top: 0;
   opacity: 0;
@@ -34,11 +37,16 @@
 }
 
 .cell:hover {
-  background-color: grey;
+  background-color: var(--info-hover);
 }
 
 .cell.header {
-  color: green;
+  color: var(--success-primary);
+  background-color: var(--success-bg);
+}
+
+.cell.header:hover {
+  background-color: var(--success-hover);
 }
 
 .cell.active {
