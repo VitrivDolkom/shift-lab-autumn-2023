@@ -30,3 +30,7 @@
 .cell.header {
   color: green;
 }
+
+.cell.active {
+  background-color: red;
+}
