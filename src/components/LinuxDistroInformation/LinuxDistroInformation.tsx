@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
-import { DistrosTableHeader } from './DistrosTableHeader'
 import './style.css'
 
 import { fetchDistros } from '../../api'
+import { DistrosTableRow } from './DistrosTableRow'
 
 export const LinuxDistroInformation = () => {
   const [distrosTable, setDistrosTable] = useState<DistrosTable | null>(null)
@@ -15,8 +15,11 @@ export const LinuxDistroInformation = () => {
   if (!distrosTable) return null
 
   return (
-    <div className="">
-      <DistrosTableHeader header={distrosTable.header} />
+    <div className="table">
+      {/* <DistrosTableHeader header={distrosTable.header} /> */}
+      {distrosTable.rows.map((row, index) => (
+        <DistrosTableRow key={index} row={row} isHeader={index === 0} />
+      ))}
     </div>
   )
 }

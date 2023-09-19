@@ -2,7 +2,8 @@
 
 interface DistrosTable {
   header: DistrosTableHeader
-  rows: string[][]
+  rows: DistrosTableRow[]
 }
 
 type DistrosTableHeader = string[]
+type DistrosTableRow = string[]

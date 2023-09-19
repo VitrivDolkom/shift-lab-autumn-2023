@@ -1,6 +1,7 @@
 const distrosTable: DistrosTable = {
-  header: ['Name', 'Users feedback', 'User experience', 'Company name', 'Origin'],
+  header: [],
   rows: [
+    ['Name', 'Users feedback', 'User experience', 'Company name', 'Origin'],
     [
       'Ubuntu',
       'Ubuntu has been my go-to distro for years. Its rock-solid and user-friendly. I use it for work, and it never disappoints.',
@@ -11,13 +12,6 @@ const distrosTable: DistrosTable = {
     [
       'Fedora',
       'Fedoras updates are always cutting-edge. I love experimenting with the latest software. It keeps me at the forefront of technology.',
-      'Good',
-      'Red Hat, Inc.',
-      'United States'
-    ],
-    [
-      'CentOS',
-      'CentOS is a workhorse. Our company servers run on CentOS, and its been incredibly stable and reliable. Never had any major issues.',
       'Good',
       'Red Hat, Inc.',
       'United States'
