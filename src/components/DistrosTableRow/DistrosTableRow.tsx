@@ -18,6 +18,7 @@ export const DistrosTableRow = ({ row, searchedCells, isHeader, headers }: Distr
         className={cx({
           t6: true,
           cell: true,
+          ellipsis: true,
           header: isHeader,
           active: !isHeader && searchedCells.indexOf(cell) > -1
         })}

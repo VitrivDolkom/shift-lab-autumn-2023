@@ -1,4 +1,7 @@
 @import './App/styles/typography.css';
+@import './App/styles/theme.css';
+@import './App/styles/fonts.css';
+@import './App/styles/mixin.css';
 
 html,
 body,

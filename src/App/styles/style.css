@@ -1,3 +1,7 @@
+::selection {
+  background: var(--primary-focus);
+}
+
 .app {
   font-family: Nunito;
   color: var(--neutral-100, #0A0A0A);

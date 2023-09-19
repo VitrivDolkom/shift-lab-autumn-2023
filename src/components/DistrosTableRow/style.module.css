@@ -6,11 +6,6 @@
 .cell {
   position: relative;
   width: 100%;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
   padding: 10px 7px;
   border: 1px solid black;
   color: var(--info-primary);
