@@ -1,4 +1,5 @@
 .table {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   padding: 0 10px;
@@ -14,13 +15,22 @@
 }
 
 .cell {
+  position: relative;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
   padding: 10px 7px;
   border: 1px solid black;
+
+}
+
+.cellHeader {
+  color: green;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: all .3s ease-in;
 }
 
 .cell:hover {
@@ -33,4 +43,28 @@
 
 .cell.active {
   background-color: red;
+}
+
+.cellHeader {
+  height: 0;
+}
+
+@media screen and (max-width: 420px) {
+  .cell.header {
+    height: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .cell {
+    padding-top: 20px;
+  }
+
+  .cellHeader {
+    opacity: 1;
+  }
 }

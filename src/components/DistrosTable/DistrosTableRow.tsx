@@ -13,26 +13,24 @@ interface DistrosTableRowProps {
   headers: DistrosTableHeader
 }
 
-export const DistrosTableRow = ({ row, isHeader, searchInfo, headers }: DistrosTableRowProps) => {
-  console.log(headers)
-  return (
-    <div className={s.row}>
-      {row.map((cell, index) => (
-        <div
-          key={index}
-          className={cx({
-            cell: true,
-            header: isHeader,
-            active:
-              !!searchInfo.search &&
-              !isHeader &&
-              headers[index] === searchInfo.currentHeader &&
-              cell.toLowerCase().indexOf(searchInfo.search.toLowerCase()) > -1
-          })}
-        >
-          {cell}
-        </div>
-      ))}
-    </div>
-  )
-}
+export const DistrosTableRow = ({ row, isHeader, searchInfo, headers }: DistrosTableRowProps) => (
+  <div className={s.row}>
+    {row.map((cell, index) => (
+      <div
+        key={index}
+        className={cx({
+          cell: true,
+          header: isHeader,
+          active:
+            !!searchInfo.search &&
+            !isHeader &&
+            headers[index] === searchInfo.currentHeader &&
+            cell.toLowerCase().indexOf(searchInfo.search.toLowerCase()) > -1
+        })}
+      >
+        <div className={s.cellHeader}>{headers[index]}</div>
+        {cell}
+      </div>
+    ))}
+  </div>
+)

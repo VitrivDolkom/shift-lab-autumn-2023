@@ -5,17 +5,11 @@
   align-items: center;
   justify-content: center;
   overflow-y: hidden;
+  transition: all .3s linear;
 }
 
 .box {
   width: 100%;
-  padding: 0px 10px;
   max-width: 1600px;
   margin: 0 auto;
 }
-
-/* @media screen and (max-width: 420px) {
-  .box {
-    max-width: 1600px;
-  }
-} */

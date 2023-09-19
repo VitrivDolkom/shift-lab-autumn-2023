@@ -16,7 +16,6 @@ const App = () => {
 
   const onSearchSubmit = (newSearch: SearchForm) => {
     setSearch(newSearch)
-    console.log(newSearch)
   }
 
   if (!distrosTable) return null
