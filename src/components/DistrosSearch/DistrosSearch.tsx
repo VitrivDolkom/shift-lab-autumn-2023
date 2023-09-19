@@ -1,4 +1,5 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
+import s from './style.module.css'
 
 interface SearchFieldProps {
   onSubmit: (search: SearchForm) => void
@@ -17,7 +18,12 @@ export const DistrosSearch = ({ onSubmit, headers, searchInfo }: SearchFieldProp
   return (
     <div className="">
       <form className="" onSubmit={handleSubmit(onSearchSubmit)}>
-        <input type="text" {...register('search')} />
+        <input
+          type="text"
+          {...register('search')}
+          className={s.searchInput}
+          placeholder="Enter text..."
+        />
         <select {...register('header')}>
           {headers.map((header, index) => (
             <option key={index} value={header}>
