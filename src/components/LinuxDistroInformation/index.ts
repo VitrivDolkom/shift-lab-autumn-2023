@@ -1,1 +1,0 @@
-export { LinuxDistroInformation } from './LinuxDistroInformation'
