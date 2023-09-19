@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+
+import { fetchDistros } from '../api'
 import { DistrosTable } from '../components/DistrosTable'
 import { SearchField } from '../components/SearchField/SearchField'
+
 import './style.css'
-import { fetchDistros } from '../api'
 
 const App = () => {
   const [distrosTable, setDistrosTable] = React.useState<DistrosTable | null>(null)
