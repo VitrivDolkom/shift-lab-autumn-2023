@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { fetchDistros } from '../api'
+import { fetchDistros, postSearch } from '../api'
 import { DistrosTable } from '../components/DistrosTable'
 import { SearchField, SearchForm } from '../components/SearchField/SearchField'
 
@@ -8,14 +8,14 @@ import './style.css'
 
 const App = () => {
   const [distrosTable, setDistrosTable] = React.useState<DistrosTable | null>(null)
-  const [search, setSearch] = useState<SearchForm>({ search: '', currentHeader: '' })
+  const [searchedCells, setSearchedCells] = useState<DistrosTableRow>([])
 
   React.useEffect(() => {
     fetchDistros().then((table) => setDistrosTable(table))
   }, [])
 
   const onSearchSubmit = (newSearch: SearchForm) => {
-    setSearch(newSearch)
+    postSearch(newSearch).then((cells) => setSearchedCells(cells))
   }
 
   if (!distrosTable) return null
@@ -24,7 +24,7 @@ const App = () => {
     <div className="app">
       <div className="box">
         <SearchField onSubmit={onSearchSubmit} headers={distrosTable.rows[0]} />
-        <DistrosTable searchInfo={search} table={distrosTable} />
+        <DistrosTable table={distrosTable} searchedCells={searchedCells} />
       </div>
     </div>
   )

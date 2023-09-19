@@ -5,10 +5,7 @@ interface SearchFieldProps {
   headers: DistrosTableHeader
 }
 
-export interface SearchForm {
-  search: string
-  currentHeader: string
-}
+export type SearchForm = TableSearchDto
 
 export const SearchField = ({ onSubmit, headers }: SearchFieldProps) => {
   const { register, handleSubmit } = useForm<SearchForm>()
@@ -19,7 +16,7 @@ export const SearchField = ({ onSubmit, headers }: SearchFieldProps) => {
   return (
     <form className="" onSubmit={handleSubmit(onSearchSubmit)}>
       <input type="text" {...register('search')} />
-      <select {...register('currentHeader')}>
+      <select {...register('header')}>
         {headers.map((header, index) => (
           <option key={index} value={header}>
             {header}

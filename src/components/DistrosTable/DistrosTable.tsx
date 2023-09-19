@@ -1,14 +1,13 @@
-import { SearchForm } from '../SearchField/SearchField'
 import { DistrosTableRow } from './DistrosTableRow'
 
 import s from './style.module.css'
 
 interface DistrosTableProps {
-  searchInfo: SearchForm
+  searchedCells: DistrosTableRow
   table: DistrosTable
 }
 
-export const DistrosTable = ({ searchInfo, table }: DistrosTableProps) => (
+export const DistrosTable = ({ searchedCells, table }: DistrosTableProps) => (
   <div className={s.table}>
     {/* <DistrosTableHeader header={distrosTable.header} /> */}
     {table.rows.map((row, index) => (
@@ -16,7 +15,7 @@ export const DistrosTable = ({ searchInfo, table }: DistrosTableProps) => (
         key={index}
         row={row}
         isHeader={index === 0}
-        searchInfo={searchInfo}
+        searchedCells={searchedCells}
         headers={table.rows[0]}
       />
     ))}

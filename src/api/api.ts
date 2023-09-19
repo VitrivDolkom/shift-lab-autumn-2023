@@ -1,5 +1,4 @@
 const distrosTable: DistrosTable = {
-  header: [],
   rows: [
     ['Name', 'Users feedback', 'User experience', 'Company name', 'Origin'],
     [
@@ -37,5 +36,26 @@ export const fetchDistros = (): Promise<DistrosTable> =>
   new Promise((resolve) => {
     setTimeout(() => {
       resolve(distrosTable)
-    }, 0)
+    }, 1000)
   })
+
+export const postSearch = (dto: TableSearchDto): Promise<DistrosTableRow> => {
+  const rowIndex = distrosTable.rows[0].indexOf(dto.header)
+  const arr: DistrosTableRow = []
+
+  if (rowIndex === -1) throw Error('sdfsdf')
+
+  for (let i = 0; i < distrosTable.rows.length; i++) {
+    const row = distrosTable.rows[i]
+
+    if (row[rowIndex].toLowerCase().indexOf(dto.search.toLowerCase()) > -1) {
+      arr.push(row[rowIndex])
+    }
+  }
+
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(arr)
+    }, 1000)
+  })
+}

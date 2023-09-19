@@ -1,19 +1,17 @@
 import classNames from 'classnames/bind'
 
-import { SearchForm } from '../SearchField/SearchField'
-
 import s from './style.module.css'
 
 const cx = classNames.bind(s)
 
 interface DistrosTableRowProps {
   row: DistrosTableRow
+  headers: DistrosTableRow
   isHeader: boolean
-  searchInfo: SearchForm
-  headers: DistrosTableHeader
+  searchedCells: DistrosTableRow
 }
 
-export const DistrosTableRow = ({ row, isHeader, searchInfo, headers }: DistrosTableRowProps) => (
+export const DistrosTableRow = ({ row, searchedCells, isHeader, headers }: DistrosTableRowProps) => (
   <div className={s.row}>
     {row.map((cell, index) => (
       <div
@@ -21,11 +19,7 @@ export const DistrosTableRow = ({ row, isHeader, searchInfo, headers }: DistrosT
         className={cx({
           cell: true,
           header: isHeader,
-          active:
-            !!searchInfo.search &&
-            !isHeader &&
-            headers[index] === searchInfo.currentHeader &&
-            cell.toLowerCase().indexOf(searchInfo.search.toLowerCase()) > -1
+          active: !isHeader && searchedCells.indexOf(cell) > -1
         })}
       >
         <div className={s.cellHeader}>{headers[index]}</div>
