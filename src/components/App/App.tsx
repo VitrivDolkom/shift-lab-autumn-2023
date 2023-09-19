@@ -1,7 +1,12 @@
+import { LinuxDistroInformation } from '../LinuxDistroInformation'
 import './App.css'
 
 function App() {
-  return <>hello</>
+  return (
+    <div className="app">
+      <LinuxDistroInformation />
+    </div>
+  )
 }
 
 export default App

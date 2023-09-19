@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+}
+
+.head {
+  padding: 10px 7px;
+  border: 1px solid black;
+}
+
+.head:hover {
+  scale: 1.1;
+}
