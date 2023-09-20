@@ -57,7 +57,6 @@
   }
 
   .cell {
-    width: 95%;
     padding-top: 30px;
     color: var(--success-primary);
     background-color: var(--success-bg);

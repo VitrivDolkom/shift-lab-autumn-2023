@@ -16,7 +16,7 @@ export const Select = ({ onOptionChange, options, currentOption }: SelectProps) 
   const { isOpen, setClose, toggleOpen } = useOpenClose()
 
   return (
-    <div className={s.wrapper} tabIndex={0} onBlur={setClose} onClick={toggleOpen}>
+    <div className={cx({ wrapper: true, t5: true })} tabIndex={0} onBlur={setClose} onClick={toggleOpen}>
       <span className={s.currentOption}>{currentOption}</span>
       <div className={s.divider}></div>
       <div className={cx({ caret: true, up: isOpen })}></div>
