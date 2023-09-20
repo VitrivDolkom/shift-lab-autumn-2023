@@ -1,7 +1,7 @@
-@import './App/styles/typography.css';
-@import './App/styles/theme.css';
-@import './App/styles/fonts.css';
-@import './App/styles/mixin.css';
+@import './app/styles/typography.css';
+@import './app/styles/theme.css';
+@import './app/styles/fonts.css';
+@import './app/styles/mixin.css';
 
 * {
   padding: 0;

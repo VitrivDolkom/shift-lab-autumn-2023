@@ -30,13 +30,12 @@
   min-width: 100px;
   justify-content: center;
   align-items: center;
-  gap: 4px;
   border-radius: 4px;
   transition: all .3s linear;
 }
 
 .button.solid {
-  color: var(--primary-main, #5632A1);
+  color: var(--primary-main);
   border: 3px solid var(--primary-focus, #D7C9FF);
   background: var(--primary-background, #E8E7FD);
 }
