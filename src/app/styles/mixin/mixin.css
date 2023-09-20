@@ -1,3 +1,5 @@
+@import './loader.css';
+
 .ellipsis {
   white-space: nowrap;
   overflow: hidden;
@@ -46,24 +48,3 @@
 }
 
 .button.outlined {}
-
-.loader {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: inline-block;
-  border-top: 3px solid var(--neutral-10);
-  border-right: 3px solid transparent;
-  box-sizing: border-box;
-  animation: rotation .8s linear infinite;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}

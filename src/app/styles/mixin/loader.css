@@ -1,0 +1,46 @@
+.loader {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid var(--neutral-10);
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation .8s linear infinite;
+}
+
+.loader.primary {
+  border-color: var(--primary-main);
+}
+
+.loader.success {
+  border-color: var(--success-primary);
+}
+
+.loader.info {
+  border-color: var(--info-primary);
+}
+
+.loader.danger {
+  border-color: var(--danger-primary);
+}
+
+.loader.sm {
+  width: 12px;
+  height: 12px;
+}
+
+.loader.bg {
+  width: 48px;
+  height: 48px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
