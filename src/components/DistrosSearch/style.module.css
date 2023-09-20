@@ -1,0 +1,36 @@
+.wrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  gap: 20px;
+}
+
+.searchInfo {
+  position: absolute;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+.searchInfo.error {
+  color: var(--danger-primary);
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.inputWrapper input {
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
