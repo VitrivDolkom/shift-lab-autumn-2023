@@ -1,7 +1,7 @@
 import { fetchDistros } from '@/api'
 import React from 'react'
 
-export const useTableState = () => {
+export const useLinuxPageState = () => {
   const [searchLoading, setSearchLoading] = React.useState(false)
   const [tableLoading, setTableLoading] = React.useState(false)
   const [distrosTable, setDistrosTable] = React.useState<DistrosTable | null>(null)
