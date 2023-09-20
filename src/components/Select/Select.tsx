@@ -13,28 +13,24 @@ interface SelectProps {
 }
 
 export const Select = ({ onOptionChange, options, currentOption }: SelectProps) => {
-  const { isOpen, toggleOpen } = useOpenClose()
+  const { isOpen, setClose, toggleOpen } = useOpenClose()
 
   return (
-    <div className={s.wrapper}>
-      <div className={s.currentOption} onClick={toggleOpen}>
-        {currentOption}
-      </div>
+    <div className={s.wrapper} onBlur={setClose} onClick={toggleOpen}>
+      <span className={s.currentOption}>{currentOption}</span>
       <div className={s.divider}></div>
-      <div className={s.caret}></div>
-      {isOpen && (
-        <ul>
-          {options.map((option, index) => (
-            <li
-              key={index}
-              className={cx({ option: true, show: currentOption === option })}
-              onClick={() => onOptionChange(option)}
-            >
-              {option}
-            </li>
-          ))}
-        </ul>
-      )}
+      <div className={cx({ caret: true, up: isOpen })}></div>
+      <ul className={cx({ options: true, show: isOpen })}>
+        {options.map((option, index) => (
+          <li
+            key={index}
+            className={cx({ option: true, show: currentOption === option })}
+            onClick={() => onOptionChange(option)}
+          >
+            {option}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

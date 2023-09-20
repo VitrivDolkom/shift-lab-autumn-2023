@@ -16,25 +16,26 @@ export const DistrosSearch = ({ onSubmit, headers, searchInfo }: SearchFieldProp
   const [currentOption, setCurrentOption] = React.useState<SelectOption | undefined>()
   const { register, handleSubmit } = useForm<SearchForm>()
   const onSearchSubmit: SubmitHandler<SearchForm> = (values) => {
+    values.header = currentOption || ''
     onSubmit(values)
   }
 
   return (
     <div className={s.wrapper}>
-      <form className="" onSubmit={handleSubmit(onSearchSubmit)}>
+      <form className={s.form} onSubmit={handleSubmit(onSearchSubmit)}>
         <input type="text" {...register('search')} className="input t5" placeholder="Enter text..." />
         <Select
           options={headers}
           currentOption={currentOption}
           onOptionChange={(newOption) => setCurrentOption(newOption)}
         />
-        <select className="select t5" {...register('header')}>
+        {/* <select className="select t5" {...register('header')}>
           {headers.map((header, index) => (
             <option key={index} value={header} className="option">
               <div className="ellipsis">{header}</div>
             </option>
           ))}
-        </select>
+        </select> */}
         <button type="submit">Search</button>
       </form>
       <p>{searchInfo}</p>
