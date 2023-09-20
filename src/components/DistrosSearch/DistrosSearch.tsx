@@ -1,8 +1,10 @@
+import classNames from 'classnames/bind'
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { Select } from '..'
-import { SelectOption } from '../Select/Select'
+import { Select, SelectOption } from '../'
 import s from './style.module.css'
+
+const cx = classNames.bind(s)
 
 interface SearchFieldProps {
   onSubmit: (search: SearchForm) => void
@@ -23,22 +25,17 @@ export const DistrosSearch = ({ onSubmit, headers, searchInfo }: SearchFieldProp
   return (
     <div className={s.wrapper}>
       <form className={s.form} onSubmit={handleSubmit(onSearchSubmit)}>
-        <input type="text" {...register('search')} className="input t5" placeholder="Enter text..." />
+        <input type="text" {...register('search')} className="input t5" placeholder="Введите текст..." />
         <Select
           options={headers}
           currentOption={currentOption}
           onOptionChange={(newOption) => setCurrentOption(newOption)}
         />
-        {/* <select className="select t5" {...register('header')}>
-          {headers.map((header, index) => (
-            <option key={index} value={header} className="option">
-              <div className="ellipsis">{header}</div>
-            </option>
-          ))}
-        </select> */}
-        <button type="submit">Search</button>
+        <button type="submit" className="button solid t5">
+          Поиск
+        </button>
+        <p className={cx({ searchInfo: true, t4: true })}>{searchInfo}</p>
       </form>
-      <p>{searchInfo}</p>
     </div>
   )
 }

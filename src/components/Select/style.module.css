@@ -86,3 +86,9 @@
   border: 3px solid var(--primary-border, #C0BBF4);
   background: var(--neutral-20, #F5F5F5);
 }
+
+.option.current {
+  background: var(--primary-background, #E8E7FD);
+  border: 3px solid var(--primary-border, #C0BBF4);
+  color: var(--primary-main, #5632A1);
+}

@@ -1,4 +1,4 @@
-import { DistrosTableRow } from '../DistrosTableRow/DistrosTableRow'
+import { DistrosTableRow } from '../'
 import s from './style.module.css'
 
 interface DistrosTableProps {

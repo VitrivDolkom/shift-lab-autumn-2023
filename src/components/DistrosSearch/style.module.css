@@ -5,5 +5,14 @@
 }
 
 .form {
+  position: relative;
   display: flex;
+  gap: 20px;
+}
+
+.searchInfo {
+  position: absolute;
+  top: 100%;
+  margin-top: 5px;
+  left: 10px;
 }

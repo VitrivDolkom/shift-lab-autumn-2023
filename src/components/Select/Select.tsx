@@ -16,7 +16,7 @@ export const Select = ({ onOptionChange, options, currentOption }: SelectProps) 
   const { isOpen, setClose, toggleOpen } = useOpenClose()
 
   return (
-    <div className={s.wrapper} onBlur={setClose} onClick={toggleOpen}>
+    <div className={s.wrapper} tabIndex={0} onBlur={setClose} onClick={toggleOpen}>
       <span className={s.currentOption}>{currentOption}</span>
       <div className={s.divider}></div>
       <div className={cx({ caret: true, up: isOpen })}></div>
@@ -24,7 +24,7 @@ export const Select = ({ onOptionChange, options, currentOption }: SelectProps) 
         {options.map((option, index) => (
           <li
             key={index}
-            className={cx({ option: true, show: currentOption === option })}
+            className={cx({ option: true, current: currentOption === option, ellipsis: true })}
             onClick={() => onOptionChange(option)}
           >
             {option}

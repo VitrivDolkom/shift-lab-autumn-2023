@@ -1,6 +1,5 @@
+import { fetchDistros } from '@/api'
 import React from 'react'
-
-import { fetchDistros } from '../../api'
 
 export const useTableState = () => {
   const [distrosTable, setDistrosTable] = React.useState<DistrosTable | null>(null)
@@ -12,8 +11,8 @@ export const useTableState = () => {
   }, [])
 
   const updateSearchInfo = (cellsAmount: number) => {
-    if (!cellsAmount) setSearchInfo('No cells found')
-    else setSearchInfo(`${cellsAmount} cells found`)
+    if (!cellsAmount) setSearchInfo('Ничего не найдено')
+    else setSearchInfo(`${cellsAmount} совпадений в таблице`)
   }
 
   return { distrosTable, searchedCells, setSearchedCells, searchInfo, updateSearchInfo }

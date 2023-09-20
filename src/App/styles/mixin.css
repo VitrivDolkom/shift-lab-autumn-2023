@@ -1,11 +1,8 @@
 .ellipsis {
-  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-
 
 .input {
   padding: 6px 12px;
@@ -26,3 +23,26 @@
 .select:focus {
   border: 2px solid var(--primary-hover);
 }
+
+.button {
+  display: inline-flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 4px;
+  transition: all .3s linear;
+}
+
+.button.solid {
+  color: var(--primary-main, #5632A1);
+  border: 3px solid var(--primary-focus, #D7C9FF);
+  background: var(--primary-background, #E8E7FD);
+}
+
+.button.solid:hover {
+  color: var(--neutral-10, #FFF);
+  background: var(--primary-main, #5632A1);
+}
+
+.button.outlined {}
