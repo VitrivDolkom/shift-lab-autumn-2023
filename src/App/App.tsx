@@ -5,16 +5,30 @@ import { useTableState } from './hooks/useTableState'
 import './styles/style.css'
 
 const App = () => {
-  const { distrosTable, searchInfo, searchedCells, updateSearchInfo, setSearchedCells } = useTableState()
+  const {
+    distrosTable,
+    searchInfo,
+    searchedCells,
+    updateSearchInfo,
+    setSearchedCells,
+    searchLoading,
+    setSearchLoading,
+    tableLoading
+  } = useTableState()
 
   const onSearchSubmit = (newSearch: TableSearchDto) => {
-    postSearch(newSearch).then((cells) => {
-      setSearchedCells(cells)
-      updateSearchInfo(cells.length)
-    })
+    setSearchLoading(true)
+    postSearch(newSearch)
+      .then((cells) => {
+        setSearchedCells(cells)
+        updateSearchInfo(cells.length)
+      })
+      .finally(() => setSearchLoading(false))
   }
 
-  if (!distrosTable) return null
+  if (!distrosTable || tableLoading) {
+    return <div>Загрузка ...</div>
+  }
 
   return (
     <div className="app">
@@ -23,6 +37,7 @@ const App = () => {
           searchInfo={searchInfo}
           onSubmit={onSearchSubmit}
           headers={distrosTable.rows[0]}
+          searchLoading={searchLoading}
         />
         <DistrosTable table={distrosTable} searchedCells={searchedCells} />
       </div>

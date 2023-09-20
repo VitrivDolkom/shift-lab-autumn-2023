@@ -10,11 +10,12 @@ interface SearchFieldProps {
   onSubmit: (search: SearchForm) => void
   headers: DistrosTableHeader
   searchInfo: string
+  searchLoading: boolean
 }
 
 type SearchForm = TableSearchDto
 
-export const DistrosSearch = ({ onSubmit, headers, searchInfo }: SearchFieldProps) => {
+export const DistrosSearch = ({ onSubmit, headers, searchInfo, searchLoading }: SearchFieldProps) => {
   const [currentOption, setCurrentOption] = React.useState<SelectOption | undefined>()
   const { register, handleSubmit } = useForm<SearchForm>()
   const onSearchSubmit: SubmitHandler<SearchForm> = (values) => {
@@ -32,9 +33,10 @@ export const DistrosSearch = ({ onSubmit, headers, searchInfo }: SearchFieldProp
           onOptionChange={(newOption) => setCurrentOption(newOption)}
         />
         <button type="submit" className="button solid t5">
-          Поиск
+          {searchLoading && <span className="loader"></span>}
+          {!searchLoading && 'Поиск'}
         </button>
-        <p className={cx({ searchInfo: true, t4: true })}>{searchInfo}</p>
+        {!searchLoading && <p className={cx({ searchInfo: true, t4: true })}>{searchInfo}</p>}
       </form>
     </div>
   )
