@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind'
+import { Typography } from '@/shared/uikit'
 import s from './style.module.css'
 
 const cx = classNames.bind(s)
@@ -23,7 +24,9 @@ export const DistrosTableRow = ({ row, searchedCells, isHeader, headers }: Distr
           active: !isHeader && searchedCells.indexOf(cell) > -1
         })}
       >
-        <div className={s.cellHeader}>{headers[index]}</div>
+        <Typography tag="div" className={cx({ cellHeader: true, t5: true })}>
+          {headers[index]}
+        </Typography>
         {cell}
       </div>
     ))}

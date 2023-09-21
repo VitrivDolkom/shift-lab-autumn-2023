@@ -9,7 +9,7 @@
 .input {
   padding: 6px 12px;
   border-radius: 4px;
-  background: var(--neutral-10, #fff);
+  background-color: var(--neutral-10, #fff);
   border: 2px solid var(--neutral-40, #E0E0E0);
 
   transition: all .1s ease;
@@ -39,12 +39,12 @@
 .button.solid {
   color: var(--primary-main);
   border: 3px solid var(--primary-focus, #D7C9FF);
-  background: var(--primary-background, #E8E7FD);
+  background-color: var(--primary-background, #E8E7FD);
 }
 
 .button.solid:hover {
   color: var(--neutral-10, #FFF);
-  background: var(--primary-main, #5632A1);
+  background-color: var(--primary-main, #5632A1);
 }
 
 .button.outlined {}

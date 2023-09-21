@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { useLocalStorage } from '@/shared/lib'
 import { HEADER_KEY } from '@/shared/lib/const/keys'
-import { useLocalStorage } from '@/shared/lib/hooks'
 import { Button } from '@/shared/uikit'
 import { Select } from '../'
 import s from './style.module.css'

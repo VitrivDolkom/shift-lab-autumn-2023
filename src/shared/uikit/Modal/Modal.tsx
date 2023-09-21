@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
 import { createPortal } from 'react-dom'
-import close from '@/assets/img/close.svg'
 import s from './styles.module.css'
 
 interface ModalProps {
@@ -17,7 +16,7 @@ export const Modal = ({ children, isOpened, onClose }: ModalProps) => {
       <div className={s.overlay} onClick={onClose}></div>
       <div className={s.content}>
         <div className={s.close} onClick={onClose}>
-          <img src={close} alt="закрыть" />
+          &times;
         </div>
         {children}
       </div>

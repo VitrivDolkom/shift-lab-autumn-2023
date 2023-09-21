@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind'
-import { useOpenClose } from '@/shared/lib/hooks'
+import { useOpenClose } from '@/shared/lib'
 import s from './style.module.css'
 
 const cx = classNames.bind(s)

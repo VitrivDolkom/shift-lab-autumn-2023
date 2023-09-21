@@ -1,5 +1,5 @@
 ::selection {
-  background: var(--primary-focus);
+  background-color: var(--primary-focus);
 }
 
 .app {
