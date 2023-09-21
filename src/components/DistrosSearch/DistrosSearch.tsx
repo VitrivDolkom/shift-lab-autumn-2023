@@ -1,55 +1,50 @@
 import classNames from 'classnames/bind'
-import { SubmitHandler, useForm } from 'react-hook-form'
 import { Select } from 'src/components'
-import { useLocalStorage } from 'src/shared/lib'
-import { HEADER_KEY } from 'src/shared/lib/const/keys'
-import { Button } from 'src/shared/uikit'
+import { Button, Typography } from 'src/shared/uikit'
+import { useDistrosSearchState } from './useDistrosSearchState'
 import s from './style.module.css'
 
 const cx = classNames.bind(s)
 
 interface SearchFieldProps {
-  onSubmit: (search: SearchForm) => void
+  onSubmit: (searchDto: TableSearchDto) => void
   headers: DistrosTableHeader
   searchInfo: string
   searchLoading: boolean
 }
 
-type SearchForm = TableSearchDto
-
 export const DistrosSearch = ({ onSubmit, headers, searchInfo, searchLoading }: SearchFieldProps) => {
-  const { value: currentOption, setValue: setCurrentOption } = useLocalStorage(HEADER_KEY, headers[0])
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  } = useForm<SearchForm>()
+  const { header, search, setSearch, setHeader } = useDistrosSearchState({
+    search: '',
+    header: headers[0]
+  })
 
-  const onSearchSubmit: SubmitHandler<SearchForm> = (values) => {
-    values.header = currentOption
-    onSubmit(values)
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    onSubmit({ search: search || '', header: header || '' })
   }
 
   return (
     <div className={s.wrapper}>
-      <form className={s.form} onSubmit={handleSubmit(onSearchSubmit)}>
+      <form className={s.form} onSubmit={handleSubmit}>
         <div className={s.inputWrapper}>
           <input
             type="text"
-            {...register('search', { required: true })}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             className="input t5"
             placeholder="Введите текст..."
           />
           {!searchLoading && (
-            <p className={cx({ searchInfo: true, t4: true, error: !!errors.search })}>
-              {!!errors.search ? 'Заполните поле' : searchInfo}
-            </p>
+            <Typography tag="p" className={cx({ searchInfo: true, t4: true, error: !search.length })}>
+              {searchInfo}
+            </Typography>
           )}
         </div>
         <Select
           options={headers}
-          currentOption={currentOption}
-          onOptionChange={(newOption) => setCurrentOption(newOption)}
+          currentOption={header}
+          onOptionChange={(newOption) => setHeader(newOption)}
         />
         <Button
           styleType="solid"

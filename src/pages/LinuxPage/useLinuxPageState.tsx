@@ -21,6 +21,11 @@ export const useLinuxPageState = () => {
   }
 
   const onSearchSubmit = (newSearch: TableSearchDto) => {
+    if (!newSearch.search) {
+      setSearchInfo('Ничего не найдено')
+      return
+    }
+
     setSearchLoading(true)
     postSearch(newSearch)
       .then((cells) => {
