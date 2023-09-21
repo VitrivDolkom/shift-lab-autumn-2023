@@ -1,6 +1,5 @@
-import { DistrosTable } from '@/components'
-import { DistrosSearch } from '@/components/DistrosSearch/DistrosSearch'
-import { Typography } from '@/shared/uikit'
+import { DistrosTable, DistrosSearch } from 'src/components'
+import { Typography } from 'src/shared/uikit'
 import { useLinuxPageState } from './useLinuxPageState'
 import s from './style.module.css'
 

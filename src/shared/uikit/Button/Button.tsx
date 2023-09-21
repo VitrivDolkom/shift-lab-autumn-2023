@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind'
 import { ButtonHTMLAttributes } from 'react'
-
 import s from './styles.module.css'
 
 type ButtonStyleType = 'outlined' | 'solid'

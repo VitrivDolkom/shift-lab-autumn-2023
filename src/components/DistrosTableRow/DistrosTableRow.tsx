@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind'
-import { Typography } from '@/shared/uikit'
+import { Typography } from 'src/shared/uikit'
 import s from './style.module.css'
 
 const cx = classNames.bind(s)

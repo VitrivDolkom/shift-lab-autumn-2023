@@ -1,9 +1,9 @@
 import classNames from 'classnames/bind'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { useLocalStorage } from '@/shared/lib'
-import { HEADER_KEY } from '@/shared/lib/const/keys'
-import { Button } from '@/shared/uikit'
-import { Select } from '../'
+import { Select } from 'src/components'
+import { useLocalStorage } from 'src/shared/lib'
+import { HEADER_KEY } from 'src/shared/lib/const/keys'
+import { Button } from 'src/shared/uikit'
 import s from './style.module.css'
 
 const cx = classNames.bind(s)
