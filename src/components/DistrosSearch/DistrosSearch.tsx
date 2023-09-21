@@ -1,6 +1,8 @@
 import classNames from 'classnames/bind'
-import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { HEADER_KEY } from '@/shared/lib/const/keys'
+import { useLocalStorage } from '@/shared/lib/hooks'
+import { Button } from '@/shared/uikit'
 import { Select } from '../'
 import s from './style.module.css'
 
@@ -16,12 +18,13 @@ interface SearchFieldProps {
 type SearchForm = TableSearchDto
 
 export const DistrosSearch = ({ onSubmit, headers, searchInfo, searchLoading }: SearchFieldProps) => {
-  const [currentOption, setCurrentOption] = React.useState(headers[0])
+  const { value: currentOption, setValue: setCurrentOption } = useLocalStorage(HEADER_KEY, headers[0])
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm<SearchForm>()
+
   const onSearchSubmit: SubmitHandler<SearchForm> = (values) => {
     values.header = currentOption
     onSubmit(values)
@@ -48,10 +51,15 @@ export const DistrosSearch = ({ onSubmit, headers, searchInfo, searchLoading }: 
           currentOption={currentOption}
           onOptionChange={(newOption) => setCurrentOption(newOption)}
         />
-        <button type="submit" className="button solid t5">
-          {searchLoading && <span className="loader"></span>}
-          {!searchLoading && 'Поиск'}
-        </button>
+        <Button
+          styleType="solid"
+          type="submit"
+          isLoading={searchLoading}
+          loader={<span className="loader"></span>}
+          className="button t5"
+        >
+          Поиск
+        </Button>
       </form>
     </div>
   )

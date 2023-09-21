@@ -1,8 +1,6 @@
 import { ReactNode } from 'react'
 import { createPortal } from 'react-dom'
-
 import close from '@/assets/img/close.svg'
-
 import s from './styles.module.css'
 
 interface ModalProps {
@@ -12,9 +10,7 @@ interface ModalProps {
 }
 
 export const Modal = ({ children, isOpened, onClose }: ModalProps) => {
-  if (!isOpened) {
-    return null
-  }
+  if (!isOpened) return null
 
   return createPortal(
     <div className={s.wrapper}>

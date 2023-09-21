@@ -1,4 +1,3 @@
-import { postSearch } from '@/api'
 import { DistrosTable } from '@/components'
 import { DistrosSearch } from '@/components/DistrosSearch/DistrosSearch'
 import { Typography } from '@/shared/uikit'
@@ -6,26 +5,8 @@ import { useLinuxPageState } from './useLinuxPageState'
 import s from './style.module.css'
 
 export const LinuxPage = () => {
-  const {
-    distrosTable,
-    searchInfo,
-    searchedCells,
-    updateSearchInfo,
-    setSearchedCells,
-    searchLoading,
-    setSearchLoading,
-    tableLoading
-  } = useLinuxPageState()
-
-  const onSearchSubmit = (newSearch: TableSearchDto) => {
-    setSearchLoading(true)
-    postSearch(newSearch)
-      .then((cells) => {
-        setSearchedCells(cells)
-        updateSearchInfo(cells.length)
-      })
-      .finally(() => setSearchLoading(false))
-  }
+  const { distrosTable, searchInfo, searchedCells, searchLoading, tableLoading, onSearchSubmit } =
+    useLinuxPageState()
 
   if (!distrosTable || tableLoading) {
     return (

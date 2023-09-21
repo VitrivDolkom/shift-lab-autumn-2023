@@ -1,4 +1,4 @@
-import { fetchDistros } from '@/api'
+import { fetchDistros, postSearch } from '@/api'
 import React from 'react'
 
 export const useLinuxPageState = () => {
@@ -20,14 +20,22 @@ export const useLinuxPageState = () => {
     else setSearchInfo(`${cellsAmount} совпадений в таблице`)
   }
 
+  const onSearchSubmit = (newSearch: TableSearchDto) => {
+    setSearchLoading(true)
+    postSearch(newSearch)
+      .then((cells) => {
+        setSearchedCells(cells)
+        updateSearchInfo(cells.length)
+      })
+      .finally(() => setSearchLoading(false))
+  }
+
   return {
     distrosTable,
     searchedCells,
-    setSearchedCells,
     searchInfo,
-    updateSearchInfo,
     searchLoading,
-    setSearchLoading,
-    tableLoading
+    tableLoading,
+    onSearchSubmit
   }
 }

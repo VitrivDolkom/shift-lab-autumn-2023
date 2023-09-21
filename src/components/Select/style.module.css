@@ -13,21 +13,6 @@
   cursor: pointer;
 }
 
-.clear {
-  background: none;
-  color: #777;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 0;
-  font-size: 30px;
-}
-
-.clear:focus,
-.clear:hover {
-  color: #333;
-}
-
 .divider {
   background-color: var(--neutral-40, #E0E0E0);
   align-self: stretch;

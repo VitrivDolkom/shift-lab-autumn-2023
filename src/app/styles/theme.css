@@ -18,7 +18,12 @@ body {
 
   --neutral-10: #fff;
   --neutral-20: #F5F5F5;
+  --neutral-30: #EDEDED;
   --neutral-40: #E0E0E0;
-
+  --neutral-50: #C2C2C2;
+  --neutral-60: #9E9E9E;
+  --neutral-70: #757575;
+  --neutral-80: #616161;
+  --neutral-90: #424242;
   --neutral-100: #0A0A0A;
 }
