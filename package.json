@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --base=./",
     "lint": "eslint -c .eslintrc.json --ext .ts,.tsx .",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write src/**/*.ts src/**/*.tsx",
