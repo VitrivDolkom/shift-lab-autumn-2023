@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
-import { Select } from 'src/components'
-import { Button, Typography } from 'src/shared/uikit'
+import { Select } from '~/features'
+import { Button, Typography } from '~/shared/uikit'
 import { useDistrosSearchState } from './useDistrosSearchState'
 import s from './style.module.css'
 
@@ -8,7 +8,7 @@ const cx = classNames.bind(s)
 
 interface SearchFieldProps {
   onSubmit: (searchDto: TableSearchDto) => void
-  headers: DistrosTableHeader
+  headers: DistrosTableHeaders
   searchInfo: string
   searchLoading: boolean
 }

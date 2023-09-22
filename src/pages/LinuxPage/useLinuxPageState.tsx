@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchDistros, postSearch } from 'src/shared/api'
+import { fetchDistros, postSearch } from '~/shared/api'
 
 export const useLinuxPageState = () => {
   const [searchLoading, setSearchLoading] = React.useState(false)

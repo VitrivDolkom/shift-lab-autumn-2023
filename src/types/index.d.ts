@@ -10,5 +10,5 @@ interface TableSearchDto extends Record<string, string> {
   header: string
 }
 
-type DistrosTableHeader = string[]
+type DistrosTableHeaders = string[]
 type DistrosTableRow = string[]

@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { LinuxPage } from 'src/pages'
+import { LinuxPage } from '~/pages'
 
 export const router = createBrowserRouter([
   {

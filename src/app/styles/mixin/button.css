@@ -1,0 +1,22 @@
+.button {
+  display: inline-flex;
+  padding: 8px 16px;
+  min-width: 100px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: all .3s linear;
+}
+
+.button.solid {
+  color: var(--primary-main);
+  border: 3px solid var(--primary-focus, #D7C9FF);
+  background-color: var(--primary-background, #E8E7FD);
+}
+
+.button.solid:hover {
+  color: var(--neutral-10, #FFF);
+  background-color: var(--primary-main, #5632A1);
+}
+
+.button.outlined {}

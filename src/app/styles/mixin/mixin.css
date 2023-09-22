@@ -1,50 +1,9 @@
 @import './loader.css';
+@import './button.css';
+@import './input.css';
 
 .ellipsis {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-.input {
-  padding: 6px 12px;
-  border-radius: 4px;
-  background-color: var(--neutral-10, #fff);
-  border: 2px solid var(--neutral-40, #E0E0E0);
-
-  transition: all .1s ease;
-  color: var(--primary-main, #5632A1);
-}
-
-.input:hover,
-.select:hover {
-  border: 2px solid var(--primary-hover);
-}
-
-.input:focus,
-.select:focus {
-  border: 2px solid var(--primary-hover);
-}
-
-.button {
-  display: inline-flex;
-  padding: 8px 16px;
-  min-width: 100px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  transition: all .3s linear;
-}
-
-.button.solid {
-  color: var(--primary-main);
-  border: 3px solid var(--primary-focus, #D7C9FF);
-  background-color: var(--primary-background, #E8E7FD);
-}
-
-.button.solid:hover {
-  color: var(--neutral-10, #FFF);
-  background-color: var(--primary-main, #5632A1);
-}
-
-.button.outlined {}

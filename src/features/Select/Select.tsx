@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind'
-import { useOpenClose } from 'src/shared/lib'
+import { useOpenClose } from '~/shared/lib'
 import s from './style.module.css'
 
 const cx = classNames.bind(s)
 
-export type SelectOption = string
+type SelectOption = string
 
 interface SelectProps {
   onOptionChange: (option: SelectOption) => void
