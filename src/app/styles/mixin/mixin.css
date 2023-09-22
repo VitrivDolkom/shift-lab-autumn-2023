@@ -1,0 +1,9 @@
+@import './loader.css';
+@import './button.css';
+@import './input.css';
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

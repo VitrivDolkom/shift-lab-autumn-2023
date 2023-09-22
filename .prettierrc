@@ -8,8 +8,9 @@
   "trailingComma": "none",
   "importOrder": [
     "^@core/(.*)$",
-    "^@/(.*)/(.*)$",
+    "<THIRD_PARTY_MODULES>",
     "^@server/(.*)$",
+    "^@/(api|components|uikit|assets|pages)(.*)/(.*)$",
     "^\\.(?!.*\\.(scss|css|png|jpg|svg)$).*",
     "(\\.\\.?/(\\w/?)+(\\.module)?.(scss|css)|\\..*(png|svg|jpg))"
   ],

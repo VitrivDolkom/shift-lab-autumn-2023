@@ -4,10 +4,11 @@ interface DistrosTable {
   rows: DistrosTableRow[]
 }
 
-interface TableSearchDto {
+// Record<string, string> нужно для типизации useSearchParams
+interface TableSearchDto extends Record<string, string> {
   search: string
   header: string
 }
 
-type DistrosTableHeader = string[]
+type DistrosTableHeaders = string[]
 type DistrosTableRow = string[]

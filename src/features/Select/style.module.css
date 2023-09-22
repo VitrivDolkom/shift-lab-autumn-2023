@@ -1,0 +1,80 @@
+.wrapper {
+  min-width: 240px;
+  max-width: 300px;
+  position: relative;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: var(--neutral-10, #fff);
+  border: 2px solid var(--neutral-40, #E0E0E0);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+.divider {
+  background-color: var(--neutral-40, #E0E0E0);
+  align-self: stretch;
+  width: 2px;
+}
+
+.caret {
+  border: solid var(--neutral-100, #0A0A0A);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transition: all .3s linear;
+}
+
+.caret.up {
+  position: relative;
+  top: 3px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.currentOption {
+  flex-grow: 1;
+}
+
+.options {
+  display: block;
+  width: 100%;
+  max-height: 400px;
+  background-color: var(--neutral-10, #fff);
+  border: 2px solid var(--neutral-40, #E0E0E0);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  overflow-y: auto;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  transition: all .3s linear;
+}
+
+.options.show {
+  top: 100%;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.option {
+  max-width: 100%;
+  padding: 6px 16px;
+  border: 3px solid var(--neutral-10, #fff);
+}
+
+.option:hover {
+  border: 3px solid var(--primary-border, #C0BBF4);
+  background-color: var(--neutral-20, #F5F5F5);
+}
+
+.option.current {
+  background-color: var(--primary-background, #E8E7FD);
+  border: 3px solid var(--primary-border, #C0BBF4);
+  color: var(--primary-main, #5632A1);
+}
